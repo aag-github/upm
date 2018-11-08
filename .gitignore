@@ -30,3 +30,6 @@
 *.exe
 *.out
 *.app
+
+#Eclipse default output dir
+Default
