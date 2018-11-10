@@ -11,10 +11,10 @@
 #include "Visitor.h"
 #include "Turn.h"
 
-class FiveTurns : public Visitor {
+class FiveTurnVisitor : public Visitor {
 public:
-    FiveTurns(){};
-    virtual ~FiveTurns(){};
+    FiveTurnVisitor(){};
+    virtual ~FiveTurnVisitor(){};
 
     virtual void visit(Turn* turn) override {
         turn->set((turn->get() + 1) % 5);

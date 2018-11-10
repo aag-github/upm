@@ -5,7 +5,7 @@
 int main(void)
 {
     Turn turn;
-    FiveTurns five;
+    FiveTurnVisitor five;
 
     for(int i = 0; i < 6; i++) {
         std::cout << turn.get() << std::endl;
