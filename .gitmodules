@@ -1,0 +1,3 @@
+[submodule "mastermind"]
+	path = mastermind
+	url = git@github.com:aag-github/upm_mastermind.git
