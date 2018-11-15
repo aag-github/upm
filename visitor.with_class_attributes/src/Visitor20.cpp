@@ -12,13 +12,14 @@
 void Visitor20::visit(OriginalX *originalX)
 {
     std::cout<< "Visitor20: visiting Original X..." << std::endl;
-    originalX->getE1()->print();
-    originalX->getE2()->print();
+    visit(originalX->getE1());
+    visit(originalX->getE2());
 }
 
 void Visitor20::visit(OriginalY* originalY)
 {
     std::cout<< "Visitor20: visiting Original Y..." << std::endl;
-    originalY->getE1()->print();
-    originalY->getE2()->print();
+    visit(originalY->getE1());
+    visit(originalY->getE2());
+    visit(originalY->getE3());
 }

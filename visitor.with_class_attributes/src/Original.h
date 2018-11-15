@@ -41,7 +41,7 @@ private:
 
 class OriginalX : public Original {
 public:
-    OriginalX(int a, double d):Original(a), d(d)
+    OriginalX(int a, double d):Original(a), b(d)
     {
         e2 = new E21();
     };
@@ -53,11 +53,12 @@ public:
     void accept(Visitor *visitor)
     {
         visitor->visit(this);
+        std::cout << "..........." << std::endl;
     }
 
-    double getD() { return d; };
+    double getB() { return b; };
 private:
-    double d ;
+    double b ;
 };
 
 class OriginalY : public Original {
@@ -65,17 +66,24 @@ public:
     OriginalY(int a) : Original(a)
     {
         e2 = new E22();
+        e3 = new E3();
     };
     virtual ~OriginalY()
     {
         delete e2;
+        delete e3;
     };
 
     void accept(Visitor *visitor)
     {
         visitor->visit(this);
+        std::cout << "-----------" << std::endl;
     }
 
-
+    E3* getE3() {
+        return e3;
+    };
+private:
+    E3 *e3;
 };
 #endif /* SRC_ORIGINAL_H_ */

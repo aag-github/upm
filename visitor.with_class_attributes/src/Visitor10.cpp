@@ -11,19 +11,17 @@
 
 void Visitor10::visit(OriginalX *originalX)
 {
-    std::cout << " Visitor10: visiting Original X..." << std::endl;
-    std::cout << "    A: " << originalX->getA() << std::endl;
-    std::cout << "    D: " << originalX->getD() << std::endl;
-    originalX->getE1()->print();
-    originalX->getE2()->print();
+    visitA(originalX->getA());
+    visit(originalX->getE1());
+    visit(originalX->getE2());
 }
 
 void Visitor10::visit(OriginalY* originalY)
 {
-    std::cout << "  Visitor10: visiting Original Y..." << std::endl;
-    originalY->getE2()->print();
-    std::cout << "    A: " << originalY->getA() << std::endl;
-    originalY->getE1()->print();
+    visit(originalY->getE2());;
+    visit(originalY->getE3());;
+    visitA(originalY->getA());
+    visit(originalY->getE1());
 }
 
 
@@ -31,6 +29,7 @@ void Visitor11::visit(OriginalX *originalX)
 {
     std::cout << "Visitor11: visiting Original X..." << std::endl;
     Visitor10::visit(originalX);
+    visitB(originalX->getB());
 }
 
 void Visitor11::visit(OriginalY* originalY)
